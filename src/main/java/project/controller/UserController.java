@@ -174,7 +174,7 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             log.info("User photo could not loading {} ", userId);
-            return ResponseEntity.badRequest().body("Error loading user photo!");
+            return ResponseEntity.badRequest().body("Error loading user photo!!");
         }
     }
 
