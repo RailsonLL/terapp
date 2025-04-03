@@ -1,0 +1,56 @@
+server:
+  port: 80
+
+cors:
+  originPatterns: http://localhost:3000,http://localhost:8080,https://erudio.com.br
+
+springdoc:
+  pathsToMatch:
+    - /auth/**
+    - /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
+
+spring:
+  application:
+    name: terapp-service
+  datasource:
+    data-source-class-name: org.postgresql.ds.PGSimpleDataSource
+    url: jdbc:postgresql://localhost:5433/terapp
+    username: postgres
+    password: admin
+  jpa:
+    show-sql: false
+    generate-ddl: false
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+      id.new_generator_mappings: true
+      properties:
+        hibernate:
+          event:
+            merge:
+              entity_copy_observer: allow
+    open-in-view: true
+    properties:
+      hibernate:
+        generate_statistics: false
+        event:
+          merge:
+            entity_copy_observer: allow
+        format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    sql:
+      init:
+        continue-on-error: true
+
+aws:
+  region: us-east-2
+  s3:
+    bucket:
+        doc: terapp-docs
+  sqs:
+    queue:
+      invoice:
+        events:
+          name: register-photo-sqs

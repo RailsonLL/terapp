@@ -1,0 +1,24 @@
+INSERT INTO terapp.tuser (
+    user_id, name, email, phone, cpf, cep, city, state, street, tuser.number_house, neighborhood,
+    tuser.company_name, tuser.company_email, tuser.company_phone, tuser.company_cnpj
+) VALUES
+      (
+          1, 'Mariana Souza', 'mariana.souza@example.com', '(21) 99876-5432', '987.654.321-00',
+          '20040-020', 'Rio de Janeiro', 'RJ', 'Rua das Laranjeiras', '250', 'Laranjeiras',
+          'InovaTech LTDA', 'contato@inovatech.com.br', '(21) 3003-1234', '98.765.432/0001-10'
+      ),
+      (
+          2, 'Lucas Ferreira', 'lucas.ferreira@example.com', '(31) 91234-5678', '456.123.789-55',
+          '30130-000', 'Belo Horizonte', 'MG', 'Avenida Afonso Pena', '789', 'Centro',
+          'SoftTech Brasil', 'suporte@softtech.com', '(31) 3222-4455', '45.612.398/0001-20'
+      ),
+      (
+          3, 'Ana Oliveira', 'ana.oliveira@example.com', '(51) 95432-1098', '321.987.654-22',
+          '90010-040', 'Porto Alegre', 'RS', 'Rua Padre Chagas', '58', 'Moinhos de Vento',
+          'NextGen Solutions', 'info@nextgen.com.br', '(51) 4009-3030', '32.109.876/0001-33'
+      ),
+      (
+          4, 'Carlos Mendes', 'carlos.mendes@example.com', '(11) 90022-3344', '123.456.789-00',
+          '01010-050', 'São Paulo', 'SP', 'Avenida Paulista', '1000', 'Bela Vista',
+          'MegaTech Ltda', 'carlos@megatech.com.br', '(11) 4004-5678', '12.345.678/0001-99'
+      );
