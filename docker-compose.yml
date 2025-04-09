@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  db:
+    container_name: pg-prod
+    image: postgres:14
+    networks:
+      - prod_net_back
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=terapp
+    volumes:
+      - prod_postgresql:/var/lib/postgresql
+      - prod_postgresql_data:/var/lib/postgresql/data
+
+  backend:
+    container_name: backend-prod
+    image: back_prod:build_${BUILD_NUMBER}
+    build: 
+      context: .
+    networks:
+      - prod_net_back
+    ports:
+      - 8081:80
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: admin
+    depends_on:
+      - db
+
+networks:
+  prod_net_back:
+
+volumes:
+  prod_postgresql:
+  prod_postgresql_data:

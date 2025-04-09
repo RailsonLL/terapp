@@ -16,9 +16,9 @@ spring:
     name: terapp-service
   datasource:
     data-source-class-name: org.postgresql.ds.PGSimpleDataSource
-    url: jdbc:postgresql://localhost:5433/terapp
-    username: postgres
-    password: admin
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5433}/terapp
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:admin}
   jpa:
     show-sql: false
     generate-ddl: false
