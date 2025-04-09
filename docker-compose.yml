@@ -6,8 +6,8 @@ services:
     networks:
       - prod_net_back
     environment:
-      - POSTGRES_PASSWORD=${DB_PASS}
-      - POSTGRES_DB=terapp
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: terapp
     volumes:
       - prod_postgresql:/var/lib/postgresql
       - prod_postgresql_data:/var/lib/postgresql/data
