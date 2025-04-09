@@ -6,7 +6,7 @@ services:
     networks:
       - prod_net_back
     environment:
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_PASSWORD=${DB_PASS}
       - POSTGRES_DB=terapp
     volumes:
       - prod_postgresql:/var/lib/postgresql
@@ -24,8 +24,8 @@ services:
     environment:
       DATABASE_HOST: db
       DATABASE_PORT: 5432
-      DATABASE_USER: postgres
-      DATABASE_PASSWORD: admin
+      DATABASE_USER: ${DB_USER}
+      DATABASE_PASSWORD: ${DB_PASS}
     depends_on:
       - db
 
